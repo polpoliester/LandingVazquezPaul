@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    line-height: 1.6;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estructura principal */
+header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    padding: 3rem 2rem;
+    text-align: center;
+    border-bottom: 1px solid #333;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Sección de hobbies */
+section {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #fff;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #6366f1, #ec4899);
+}
+
+article {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+article:hover {
+    transform: translateY(-5px);
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+/* Estilos para imágenes */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* Carruseles */
+.carrusel-series, .carrusel-peliculas {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding: 1rem 0;
+    scrollbar-width: thin;
+    scrollbar-color: #6366f1 #1e1e1e;
+}
+
+.carrusel-series::-webkit-scrollbar, 
+.carrusel-peliculas::-webkit-scrollbar {
+    height: 8px;
+}
+
+.carrusel-series::-webkit-scrollbar-track, 
+.carrusel-peliculas::-webkit-scrollbar-track {
+    background: #1e1e1e;
+    border-radius: 10px;
+}
+
+.carrusel-series::-webkit-scrollbar-thumb, 
+.carrusel-peliculas::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, #6366f1, #ec4899);
+    border-radius: 10px;
+}
+
+.carrusel-series img, 
+.carrusel-peliculas img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* Estilos para el texto */
+p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+em {
+    font-style: italic;
+    color: #ec4899;
+}
+
+/* Footer y contacto */
+footer {
+    background-color: #1a1a2e;
+    padding: 3rem 2rem;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+footer h2 {
+    margin-bottom: 1.5rem;
+}
+
+footer a {
+    color: #6366f1;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    font-size: 1.2rem;
+}
+
+footer a:hover {
+    color: #ec4899;
+    text-decoration: underline;
+}
+
+/* Efectos y animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+article {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+article:nth-child(2) { animation-delay: 0.2s; }
+article:nth-child(3) { animation-delay: 0.4s; }
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    section {
+        padding: 0 1rem;
+    }
+    
+    article {
+        padding: 1.5rem;
+    }
+    
+    .carrusel-series img, 
+    .carrusel-peliculas img {
+        width: 150px;
+        height: 225px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 2rem 1rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.3rem;
+    }
+}
